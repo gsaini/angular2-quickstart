@@ -1,7 +1,18 @@
 import {Component} from 'angular2/core';
+import {Hero} from './hero';
 
 @Component({
     selector: 'my-app',
-    template: '<h1>My First Angular 2 App</h1>'
+    templateUrl: 'app/app-component.tpl.html'
 })
-export class AppComponent { }
+
+export class AppComponent {
+    title = 'Tour of Heroes';
+    heroes = [];
+    
+    addHero(newHero:string) {
+        if (newHero) {
+            this.heroes.push(newHero);
+        }        
+    }
+}

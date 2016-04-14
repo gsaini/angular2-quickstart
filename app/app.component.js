@@ -20,11 +20,18 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
+                    this.title = 'Tour of Heroes';
+                    this.heroes = [];
                 }
+                AppComponent.prototype.addHero = function (newHero) {
+                    if (newHero) {
+                        this.heroes.push(newHero);
+                    }
+                };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: '<h1>My First Angular 2 App</h1>'
+                        templateUrl: 'app/app-component.tpl.html'
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
